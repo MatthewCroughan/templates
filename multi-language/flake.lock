@@ -258,8 +258,7 @@
         "hydra": "hydra",
         "nix-tools": "nix-tools",
         "nixpkgs": [
-          "haskell-nix",
-          "nixpkgs-unstable"
+          "nixpkgs"
         ],
         "nixpkgs-2003": "nixpkgs-2003",
         "nixpkgs-2105": "nixpkgs-2105",
@@ -483,22 +482,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1652020977,
-        "narHash": "sha256-9hDlNbrxzD/pLlXmoQ6gzxbYiSAKrj7uHYUWNByLFlI=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "3c5ae9be1f18c790ea890ef8decbd0946c0b4c04",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-21.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "node2nix": {
       "flake": false,
       "locked": {
@@ -578,7 +561,10 @@
       "inputs": {
         "dream2nix": "dream2nix",
         "haskell-nix": "haskell-nix",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": [
+          "haskell-nix",
+          "nixpkgs-unstable"
+        ]
       }
     },
     "stackage": {

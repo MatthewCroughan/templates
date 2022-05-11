@@ -1,7 +1,11 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.11";
-    haskell-nix.url = "github:input-output-hk/haskell.nix";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.11";
+    nixpkgs.follows = "haskell-nix/nixpkgs-unstable";
+    haskell-nix = {
+      url = "github:input-output-hk/haskell.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     dream2nix = {
       url = "github:davhau/dream2nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +21,7 @@
       forAllSystems = forSystems supportedSystems;
     in
     {
-      packages = forAllSystems (system: pkgs: import ./top-level.nix { inherit pkgs inputs; } );
+      packages = forAllSystems (system: pkgs: import ./top-level-packages.nix { inherit pkgs inputs; } );
 #      devShells = forAllSystems (system: pkgs: import ./top-level-devshells.nix { inherit pkgs inputs; } );
     };
 }
