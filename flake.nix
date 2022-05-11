@@ -77,6 +77,11 @@
         description = "A simple Go package";
       };
 
+      multi-language = {
+        path = ./multi-language;
+        description = "Using existing frameworks to construct a multi-language package set ";
+      };
+
     };
 
     defaultTemplate = self.templates.trivial;
