@@ -1,6 +1,5 @@
 {
   inputs = {
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.11";
     nixpkgs.follows = "haskell-nix/nixpkgs-unstable";
     haskell-nix = {
       url = "github:input-output-hk/haskell.nix";
@@ -22,6 +21,5 @@
     in
     {
       packages = forAllSystems (system: pkgs: import ./top-level-packages.nix { inherit pkgs inputs; } );
-#      devShells = forAllSystems (system: pkgs: import ./top-level-devshells.nix { inherit pkgs inputs; } );
     };
 }
